@@ -11,12 +11,12 @@ def get_word(word_list):
     return word.upper()
 
 #tell player to start guessing
-print ("Please guess a character you think is in the word!")
+print ("Please guess a character you think is in the word.")
 
 #guessing
 def play(word):
   word_completion = "_" * len(word)
   guessed = False
-  guesed_letters = []
+  guessed_letters = []
   guessed_words = []
   tries = 5
