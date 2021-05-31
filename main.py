@@ -15,4 +15,8 @@ print ("Please guess a character you think is in the word!")
 
 #guessing
 def play(word):
-  print("word_completion")
+  word_completion = "_" * len(word)
+  guessed = False
+  guesed_letters = []
+  guessed_words = []
+  tries = 5
