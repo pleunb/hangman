@@ -33,3 +33,5 @@ def play(word):
   guessed_letters = []
   guessed_words = []
   tries = 5
+
++--
