@@ -28,4 +28,8 @@ for char in startguessing:
 
 #guessing
 def play(word):
-  print("word_completion")
+  word_completion = "_" * len(word)
+  guessed = False
+  guessed_letters = []
+  guessed_words = []
+  tries = 5
