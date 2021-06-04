@@ -1,5 +1,14 @@
+#typewriter fancy stuff
+import sys
+import time
+
+
 #starting the game
-print ("Hi, welcome to hangman! Let's get started!")
+beginning = "Hi, welcome to hangman!\nLet's get started!\n"
+for char in beginning: 
+  sys.stdout.write(char)
+  sys.stdout.flush()
+  time.sleep (0.05)
 
 #list of words
 import random
@@ -11,7 +20,11 @@ def get_word(word_list):
     return word.upper()
 
 #tell player to start guessing
-print ("Please guess a character you think is in the word.")
+startguessing = "Please guess a character you think is in the word."
+for char in startguessing: 
+  sys.stdout.write(char)
+  sys.stdout.flush()
+  time.sleep (0.05)
 
 #guessing
 def play(word):
