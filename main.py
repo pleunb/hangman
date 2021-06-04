@@ -10,6 +10,38 @@ for char in beginning:
   sys.stdout.flush()
   time.sleep (0.05)
 
+def galgjes():
+  print(1)
+ 1= +---+
+    |
+    |
+    |
+ print(2)
+ +---+
+ |   o
+ |  
+ |  
+ 
+
+ +---+
+ |   o
+ |  /|\
+ |  
+ 
+
+ +---+
+ |   o
+ |  /|\
+ |  / \
+ 
+
+ +---+
+ |   o
+ |  /|\
+ |  / \
+ ===
+
+
 #choose word
 import random 
 from words import word_list
@@ -17,6 +49,7 @@ from words import word_list
 def get_word(word_list):
     word = random.choice(word_list)
     return word.upper()
+
 
 #tell player to start guessing
 startguessing = "Please guess a character you think is in the word."
