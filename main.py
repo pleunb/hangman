@@ -10,11 +10,10 @@ for char in beginning:
   sys.stdout.flush()
   time.sleep (0.05)
 
-#list of words
-import random
-word_list = ("informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk")
-
 #choose word
+import random 
+from words import word_list
+
 def get_word(word_list):
     word = random.choice(word_list)
     return word.upper()
