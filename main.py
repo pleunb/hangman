@@ -1,62 +1,10 @@
-#typewriter fancy stuff
-import sys
-import time
-
-
-#starting the game
-beginning = "Hi, welcome to hangman!\nLet's get started!\n"
-for char in beginning: 
-  sys.stdout.write(char)
-  sys.stdout.flush()
-  time.sleep (0.05)
-
-def galgjes():
-  print(1)
- 1= +---+
-    |
-    |
-    |
- print(2)
- +---+
- |   o
- |  
- |  
- 
-
- +---+
- |   o
- |  /|\
- |  
- 
-
- +---+
- |   o
- |  /|\
- |  / \
- 
-
- +---+
- |   o
- |  /|\
- |  / \
- ===
-
-
-#choose word
+#game chooses a word
 import random 
 from words import word_list
 
-def get_word(word_list):
+def get_word():
     word = random.choice(word_list)
     return word.upper()
-
-
-#tell player to start guessing
-startguessing = "Please guess a character you think is in the word."
-for char in startguessing: 
-  sys.stdout.write(char)
-  sys.stdout.flush()
-  time.sleep (0.05)
 
 #guessing
 def play(word):
@@ -65,5 +13,98 @@ def play(word):
   guessed_letters = []
   guessed_words = []
   tries = 5
+  print("Hi, welcome to Hangman! Let's get started.")
+  print(galgjes(tries))
+  print(word_completion)
+  print("/n")
+  while not guessed and tries > 0:
+    guess = input("Please guess a letter: ").upper()
+    if len(guess) == 1 and guess.isalpha():
+      if guess in guessed_letters:
+        print("You've already guessed this letter. Try a letter you haven't tried before this time")
+      elif guess not in word:
+        print(guess, "is not in the word. Try again!")
+        tries -=1
+        guessed_letters.append(guess)
+      else:
+        "Well done!"
+        guessed_letters.append(guess)
+        word_as_list = list(word_completion)
+        indices = [i for i, letter in enumerate(word) if letter == guess]
+        for index in indices:
+          word_as_list[index] = guess
+        word_completion = "".join(word_as_list)
+        if "_" not in word_completion:
+          guessed = True 
+    elif len(guess) == len(word) and guess.isalpha():
+      if guess in guessed_words: 
+        print("You've already guessed this letter. Try a letter you haven't tried before this time")
+      elif guess != word:
+        print(guess, "is not in the word. Try again!")
+        tries -=1
+        guessed_letters.append(guess)
+      else:
+        guessed = True
+        word_completion = word 
+    else: 
+      print("Sorry! Please make sure you're guessing a letter or word, and not a number. Try again:")
+    print(galgje(tries))
+    print(word_completion)
+    print(/n)
+  if guessed:
+    print("Well done! You guessed the word and won the game.")
+  else:
+    print("Unfortunately you ran out of turns. The word was " + word + ". You lost!")
 
-+--
+
+
+def galgjes(tries):
+  stages = [ """
+            +---+
+            |   |
+            |
+            |
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  
+            |  
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  /|\
+            |  
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  /|\
+            |  / \
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  /|\
+            |  / \
+            -
+          """
+  ]
+  return stages[tries]
+
+def main ():
+  word = get_word()
+  play(word)
+  while input("Would you like to play again? (y/n)").upper() == "y":
+    word = get_word()
+    play(word)
+
+if __name__ == "__main__":
+  main()
+
+
