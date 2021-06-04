@@ -10,13 +10,17 @@ for char in beginning:
   sys.stdout.flush()
   time.sleep (0.05)
 
-def galgjes():
-  print(1)
- 1= +---+
-    |
-    |
-    |
- print(2)
+def galgjes(tries):
+  stages= [" +---+
+ |
+ |
+ |
+ " 
+ +---+
+ |
+ |
+ |
+ 
  +---+
  |   o
  |  
@@ -40,6 +44,7 @@ def galgjes():
  |  /|\
  |  / \
  ===
+,""" ]
 
 
 #choose word
