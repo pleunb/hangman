@@ -98,11 +98,9 @@ def play(word):
 def main ():
   word = get_word()
   play(word)
-  while input("Would you like to play again? (y/n)").upper() == "y":
-    word = get_word()
-    play(word)
+  if input("Would you like to play again? (y/n)") == "y":
+    main()
 
-if __name__ == "__main__":
-  main()
+main()
 
 
