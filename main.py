@@ -1,4 +1,3 @@
-#game chooses a word
 import random 
 from words import word_list
 
