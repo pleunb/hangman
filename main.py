@@ -51,7 +51,7 @@ def play(word):
   guessed = False
   guessed_letters = []
   guessed_words = []
-  tries = 5
+  tries = 4
   print("Hi, welcome to Hangman! Let's get started.\n")
   print(galgjes(tries))
   print(word_completion)
@@ -86,7 +86,7 @@ def play(word):
         word_completion = word 
     else: 
       print("Sorry! Please make sure you're guessing a letter or word, and not a number. Try again:\n")
-    print(galgje(tries))
+    print(galgjes(tries))
     print(word_completion)
   if guessed:
     print("Well done! You guessed the word and won the game.")
