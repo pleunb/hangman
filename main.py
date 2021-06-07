@@ -6,6 +6,46 @@ def get_word():
     word = random.choice(word_list)
     return word.upper()
 
+
+def galgjes(tries):
+  stages = [ """
+            +---+
+            |   |
+            |
+            |
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  
+            |  
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  /|\
+            |  
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  /|\
+            |  / \
+            -
+          """,
+          """
+            +---+
+            |   o
+            |  /|\
+            |  / \
+            -
+          """
+  ]
+  return stages[tries]
+
 #guessing
 def play(word):
   word_completion = "_" * len(word)
@@ -55,45 +95,6 @@ def play(word):
     print("Unfortunately you ran out of turns. The word was " + word + ". You lost!")
 
 
-
-def galgjes(tries):
-  stages = [ """
-            +---+
-            |   |
-            |
-            |
-            -
-          """,
-          """
-            +---+
-            |   o
-            |  
-            |  
-            -
-          """,
-          """
-            +---+
-            |   o
-            |  /|\
-            |  
-            -
-          """,
-          """
-            +---+
-            |   o
-            |  /|\
-            |  / \
-            -
-          """,
-          """
-            +---+
-            |   o
-            |  /|\
-            |  / \
-            -
-          """
-  ]
-  return stages[tries]
 
 def main ():
   word = get_word()
