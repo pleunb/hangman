@@ -41,6 +41,8 @@ def galgjes(tries):
             |  
             |  
             
+          """, """
+            +---+
           """
   ]
   return stages[tries]
@@ -51,7 +53,7 @@ def play(word):
   guessed = False
   guessed_letters = []
   guessed_words = []
-  tries = 4
+  tries = 5
   print("Hi, welcome to Hangman! Let's get started.\n")
   print(galgjes(tries))
   print(word_completion)
