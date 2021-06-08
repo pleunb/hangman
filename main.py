@@ -61,10 +61,12 @@ def play(word):
     guess = input("Please guess a letter: ").upper()
     if len(guess) == 1 and guess.isalpha():
       if guess in guessed_letters:
-        print("You've already guessed this letter. Try a letter you haven't tried before this time")
+        print("You've already guessed this letter. Try a letter you haven't tried before this time:")
+        print ("You have " ,tries, " guesses left.")
       elif guess not in word:
         print(guess, "is not in the word. Try again!")
         tries -=1
+        print ("You have " ,tries, " guesses left.")
         guessed_letters.append(guess)
       else:
         "Well done!"
@@ -78,16 +80,19 @@ def play(word):
           guessed = True 
     elif len(guess) == len(word) and guess.isalpha():
       if guess in guessed_words: 
-        print("You've already guessed this letter. Try a letter you haven't tried before this time")
+        print("You've already guessed this letter. Try a letter you haven't tried before this time:")
+        print ("You have " ,tries, " guesses left.")
       elif guess != word:
         print(guess, "is not in the word. Try again!")
         tries -=1
+        print ("You have " ,tries, " guesses left.")
         guessed_letters.append(guess)
       else:
         guessed = True
         word_completion = word 
     else: 
       print("Sorry! Please make sure you're guessing a letter or word, and not a number. Try again:\n")
+      print ("You have " ,tries, " guesses left.")
     print(galgjes(tries))
     print(word_completion)
   if guessed:
