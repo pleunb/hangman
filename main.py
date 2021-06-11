@@ -45,7 +45,7 @@ def galgjes(tries):
 
 #guessing
 def play(word):
-  word_completion = "-" * len(word)
+  word_completion = "_" * len(word)
   guessed = False
   guessed_letters = []
   guessed_words = []
