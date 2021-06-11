@@ -87,7 +87,7 @@ def play(word):
         guessed = True
         word_completion = word 
     else: 
-      print("Sorry! Please make sure you're guessing a letter or word, and not a number. Try again:\n")
+      print("Sorry! Please make sure you're guessing a letter or word, and not a number or other figure. Try again:\n")
       print ("You have " ,tries, " guesses left.")
     print(galgjes(tries))
     print(word_completion)
