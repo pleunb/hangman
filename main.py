@@ -54,7 +54,7 @@ def play(word):
   print(galgjes(tries))
   print(word_completion)
   while not guessed and tries > 0:
-    guess = input("Please guess a letter that you think is in the word we chose (if you're confident you know the word you can also guess the entire word!): ").upper()
+    guess = input("Please guess a letter that you think is in the word we chose:").upper()
     if len(guess) == 1 and guess.isalpha():
       if guess in guessed_letters:
         print("You've already guessed this letter. Try a letter you haven't tried before this time:")
