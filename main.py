@@ -48,15 +48,17 @@ def play(word):
   word_completion = "_" * len(word)
   guessed = False
   guessed_letters = []
-  guessed_words = []
+  guessed_words = []  
   tries = 5
   print("Hi, welcome to Hangman! Let's get started. You have 5 oppurtunities to guess a letter (or the word). The word is in Dutch. \n")
   print(galgjes(tries))
   print(word_completion)
   while not guessed and tries > 0:
+    print("You've already guessed these letters:")
+    print(guessed_letters)
     guess = input("Please guess a letter that you think is in the word we chose:").upper()
     if len(guess) == 1 and guess.isalpha():
-      if guess in guessed_letters:
+      if guess in guessed_letters:       
         print("You've already guessed this letter. Try a letter you haven't tried before this time:")
         print ("You have " ,tries, " guesses left.")
       elif guess not in word:
